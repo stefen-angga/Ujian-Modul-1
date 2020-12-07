@@ -2,7 +2,7 @@
 def hashtag(string):
     y = [i.capitalize() for i in string.split()]
     x = '#'+''.join(y)
-    if string == '' or string == ' ':
+    if len(y) == 0:
         print(False)
     elif len(x) > 140 :
         print(False) 
