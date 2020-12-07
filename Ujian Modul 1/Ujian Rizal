@@ -1,0 +1,72 @@
+Nomor 1
+
+def kata(a):
+    if len(a) > 140:
+        return(False)
+    elif a == '':
+        return (False)
+    else:
+        a = a.split()
+        a.insert(0, '#')
+        a.append('"')
+    return (''.join(a))
+
+user = input('Masukkan sebuah kalimat : ').title()
+print(kata(user))
+
+No. 2
+
+def create_phone_number(x):
+    list_nomor = []
+    for i in x:
+        i = str(i)
+        list_nomor.append(i)
+    list_nomor.insert(0, '(')
+    list_nomor.insert(4, ')')
+    list_nomor.insert(5, ' ')
+    list_nomor.insert(9, '-')
+    print(''.join(list_nomor))
+
+create_phone_number([1,2,3,4,5,6,7,8,9,10])
+
+No. 3
+
+def sort_odd_even(a):
+    b = sorted(a)
+    a = b
+    odd = []
+    even = []
+    for i in a:
+        if i%2 == 0:
+            even.append(i)
+        else:
+            odd.append(i)
+    even.reverse()
+    odd.insert(2, even[0])
+    odd.insert(3, even[1])
+    odd.insert(5, even[2])
+    print(odd)
+sort_odd_even([5,3,2,8,1,4])
+
+No. 4
+
+def hollow_triangle(n):
+    if n == 1:
+        print('#')
+        return (False)
+    
+    atas = ['_'*(n-1)+'*'+'_'*(n-1)]
+    bawah = ['##'*(n-1)+'#']
+    mid = []
+    for i in range(n-2,0,-1):
+        mid.append(('_'*i)+'*'+('_'*((2*n)-(2*i)-3))+'*'+('_'*i))
+    print(atas[0])
+
+    for i in mid:
+        print(i)
+    
+    print(bawah[0])
+
+baris = int(input('Masukkan jumlah baris: '))
+hollow_triangle(baris)
+
