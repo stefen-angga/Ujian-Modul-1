@@ -1,0 +1,60 @@
+def dua(a):
+    if not a.isnumeric():
+        return 'Nomor hanya boleh berisi angka'
+    elif len(a) > 10:
+        return 'Nomor hp maksimal hanya 10 angka'
+    else:
+        return '(' + a[:3] +')' +' '+ a[3:6] + '-'+ a[6:]
+
+user = input()
+print(dua(user))
+
+
+odd = []
+odd_idx = []
+even = []
+even_idx = []
+
+def tiga(a):
+    ganjil = [i for i in a if i%2 ==1]
+    genap = [i for i in a if i%2 == 0]
+    ganjil.sort()
+    genap.sort(reverse=True)
+    ganjil.extend(genap)
+    return ganjil
+
+user = list(map(int, input().split()))
+print(tiga(user))
+def empat(n):
+    if n == 1:
+        print("#")
+        return False
+    
+    atas = ["_"*(n-1) + "#" + "_" *(n-1)]
+    bawah = ["#" * ((n)) + "#"*(n-1)]
+    mid = []
+    for i in range (n-2, 0, -1):
+        mid.append(("_" * i) + "#" + ("_" * ((2 *n) - (2 *i)- 3))+ "#" + ("_" * i))
+    
+    print(atas[0])
+
+    for i in mid:
+        print(i)
+    
+    print(bawah[0])
+
+baris = int(input("Masukkan Jumlah Baris : "))
+empat(baris)
+def satu(a):
+    if len(a) > 140:
+        return 'False'
+    elif a =='':
+        return 'False'
+    else:
+        a = a.split()
+        a.insert(0,'#')
+        a.insert(len(a), '')
+    return ''.join(a)
+
+user = input('Masukkan sebuah kalimat : ').title()
+print(satu(user))
