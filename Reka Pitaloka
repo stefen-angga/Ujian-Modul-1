@@ -1,0 +1,99 @@
+print ("SOAL NO 1")
+def hashtag(x):
+    if len(x)<1:
+        return False
+    elif len(x)>140:
+        return False
+    elif len(x) <=140 :
+        z = x.split()
+        r = []
+        for i in z:
+            c = i.capitalize()
+            r.append(c)
+        y ="".join(r) #utk hilangka spasi
+    return (f'#{y}')   
+x = input("masukkan kalimat:")
+print(hashtag(x))
+
+
+
+print ("SOAL NO 2")
+def create_phone_number(x):
+    awal =[]
+    tengah =[]
+    akhir =[]
+    if len(x) >= 10 :
+        for i in range (0,3):
+            awal.append(x[i])
+        for i in range (3,6):
+            tengah.append(x[i])
+        for i in range (6,len(x)):
+            akhir.append(x[i])
+    else :
+        print ("nomor harus terdiri dari 10 karakter")
+    awal = "".join(awal) #utk hilangkan koma
+    tengah ="".join(tengah)
+    akhir = "".join(akhir)
+    print(f'({awal}) {tengah}-{akhir}')
+
+x = input("masukkan nomor hp:")
+create_phone_number(x)
+
+
+
+print ("SOAL NO 3")
+def odd_even_num(x):
+    if len(x)<1 :
+        return False
+    else :
+        x = x.split()
+        y = [int(i) for i in x]
+        y = sorted(y)
+        odd = []
+        even = []
+        for i in y:
+            if i % 2 == 0:
+                even.append(i)
+            else:
+                odd.append(i)
+        y = (odd+list(reversed(even)))
+        return (y)
+
+x = input("Masukkan Angka:")
+print(odd_even_num(x))
+
+
+
+
+print ("SOAL NO 4")
+def gambar(x):
+    r = ''
+    if x == 1:
+        r += '#'
+    elif x == 2 :
+        for i in range (1,3):
+            r += '_'*(2-i)
+            r += '#'*(i)
+            r += '_'*(2-i)
+            r += '#'*(-1+i)
+            r +='\n'
+    else:
+        for i in range (x):
+            if i < x-1:
+                if i == 0 :
+                    r += '_'*(x-i-1)
+                    r += '#'
+                    r += '_'*(x-i-1)
+                else :   
+                    r += '_'*(x-i-1)
+                    r += "#"
+                    r += '_'*(2*i-1)
+                    r += '#'
+                    r += '_'*(x-i-1)
+            elif i == (x-1) :
+                r +='#'*(2*x-1)
+            r += '\n'
+    print (r)
+
+input = int(input("masukkan jumlah baris:"))
+gambar(input)
