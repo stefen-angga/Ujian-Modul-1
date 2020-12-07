@@ -16,6 +16,11 @@ hashtag("")
 
 # Soal nomor 2
 def create_phone_number(number):
+    if len(number) > 10:
+        return print('Number exceeds di length of 10')
+    for i in number:
+        if i > 9 or i < 0:
+            return print('Number should be between 0 and 9')
     number = [str(i) for i in number]
     number = ''.join(number)
     x = '('+ number[:3] + ') '
